@@ -11,11 +11,12 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     serializer_class = EmployeeSerializer
     queryset = Employee.objects.all()
 
-def get_all_employees(request):
-    emp = list(Project.objects.values())
-    print(emp)
-    return JsonResponse(emp, safe=False)
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    serializer_class = ProjectSerializer
+    queryset = Project.objects.all()
 
 
-def get_employee(request):
-    return None
+class DepartmentViewSet(viewsets.ModelViewSet):
+    serializer_class = DepartmentSerializer
+    queryset = Department.objects.all()
